@@ -1,0 +1,1 @@
+DISCLAIMER: If you use this tool mischevious purposes than you will be responsible for your act.
