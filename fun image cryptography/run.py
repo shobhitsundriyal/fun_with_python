@@ -16,7 +16,7 @@ random.seed(key)
 np.random.seed(key)
 
 # for now just read image
-image = cv2.imread('img.jpg')
+image = cv2.imread('img.png')
 image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
 img_arr = np.array(image)
