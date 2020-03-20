@@ -1,6 +1,6 @@
 import random
 
-target = 'Umai owa mou sindore. Nani?'
+target = 'Umai owa mou sindore. Nani?!!'
 charecters = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,?!'
 
 def makelist():
