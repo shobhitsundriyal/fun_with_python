@@ -11,9 +11,9 @@ def take_screenshot():
     return image
 
 def cactus():
-    for i in range(300, 350):
+    for i in range(300, 400):
         for j in range(650, 700):
-            if data[i, j] < 50:
+            if data[i, j] in [5, 172]:
                 return True
     return False
 
@@ -25,12 +25,11 @@ if __name__ == "__main__":
         data = image.load() #image to array 600bdinoheigth 172 initial catus        
         data_arr = np.asarray(data)
         
-        #if cactus():
-        #    hit('up')
-        print(np.asarray(data_arr))
-        if 0 in data_arr[250:300, 650:700]:
-            print(True)
-    
+        if cactus():
+            hit('up')
+        
+        
+   
     
 
 
