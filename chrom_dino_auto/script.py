@@ -17,6 +17,11 @@ def cactus():
                 return True
     return False
 
+def bird():
+    
+
+    return False
+
 if __name__ == "__main__":
     time.sleep(3)
     hit('up')
@@ -28,6 +33,8 @@ if __name__ == "__main__":
         if cactus():
             hit('up')
         
+        if bird():
+            hit('down')
         
    
     
