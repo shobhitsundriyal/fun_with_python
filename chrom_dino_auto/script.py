@@ -1,7 +1,7 @@
 import pyautogui
 from PIL import Image, ImageGrab
-import time
 import numpy as np
+import time
 
 def hit(key):
     pyautogui.press(key)
@@ -11,10 +11,11 @@ def take_screenshot():
     return image
 
 def cactus():
-    for i in range(300, 400):
+    for i in range(250, 450):
         for j in range(650, 700):
             if data[i, j] in [5, 172]:
                 return True
+            #data[i,j] = 0
     return False
 
 def bird():
