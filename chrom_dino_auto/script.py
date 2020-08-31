@@ -11,7 +11,7 @@ def take_screenshot():
     return image
 
 def cactus():
-    for i in range(250, 450):
+    for i in range(250, 550):
         for j in range(650, 700):
             if data[i, j] in [5, 172]:
                 return True
@@ -19,9 +19,13 @@ def cactus():
     return False
 
 def bird():
-    
+    for i in range(250, 550):
+        for j in range(520, 600):
+            if data[i, j] in [5, 172]:
+                return True
+            #data[i,j] = 0
+    return False    
 
-    return False
 
 if __name__ == "__main__":
     time.sleep(3)
