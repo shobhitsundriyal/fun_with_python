@@ -43,11 +43,11 @@ for i in range(1, args.n+1):
                    ec=(1., 0.5, 0.5),
                    fc=(1., 0.8, 0.8),
                    ))
-    plt.text(1.3, 1, f'Switch Win Ratio: {round(win_list[0]/i, 2)}', fontsize=17,bbox=dict(boxstyle="round",
+    plt.text(1.2, 1, f'Switch Win Ratio: {round(win_list[0]/i, 2)}', fontsize=17,bbox=dict(boxstyle="round",
                    ec=(1., 0.5, 0.5),
                    fc=(1., 0.8, 0.8),
                    ))
-    plt.text(1.3, 0.8, f'Experiment no.: {round(win_list[1]/i, 2)}', fontsize=17, bbox=dict(boxstyle="round",
+    plt.text(1.2, 0.8, f'Not Switch Win Ratio: {round(win_list[1]/i, 2)}', fontsize=17, bbox=dict(boxstyle="round",
                    ec=(1., 0.5, 0.5),
                    fc=(1., 0.8, 0.8),
                    ))
