@@ -2,12 +2,15 @@ import pyperclip as pc
 from random import choice as ch
 
 def mess_it_up(txt):
-    lis = ['1','3','2']
+    lis = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
     l = len(txt)
     mod_txt = ''
     for i in range(l):
-        c = ch(lis)
-        mod_txt = mod_txt + c
+        if txt[i] != ' ':
+            c = ch(lis)
+            mod_txt = mod_txt + c
+        else:
+            mod_txt = mod_txt + ' '
     return mod_txt
 
 text = pc.paste()
