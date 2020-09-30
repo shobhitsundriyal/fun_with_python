@@ -2,20 +2,27 @@ import pygame
 import math
 import random
 import numpy as np
+import argparse
+
+parser = argparse.ArgumentParser() 
+parser.add_argument("-c", action='store_true') 
+args = parser.parse_args() 
+colored = args.c
 
 out = False
-win_width, win_height = 400, 300
+win_width, win_height = 800, 600
 
 pygame.init()
 background = pygame.display.set_mode((win_width, win_height))
 clock = pygame.time.Clock()
 
 def redraw():
-    #background.fill((0,0,0))
-    for i in range(win_height):
-        for j in range(win_width):
-            b = random.randint(0, 255)
-            pygame.draw.circle(background, (b,b,b), (j+1, i+1), 2)
+    im = np.random.randint(255, size=(win_width,win_height,3))
+    if not colored:
+        im[:,:,1] = im[:,:,0]
+        im[:,:,2] = im[:,:,0]
+    surf = pygame.surfarray.make_surface(im)
+    background.blit(surf, (0, 0))
     pygame.display.update()
 
 #Main Loop

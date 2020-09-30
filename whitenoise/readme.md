@@ -1,0 +1,1 @@
+Add -c argument for colored noise else it would be black and white
