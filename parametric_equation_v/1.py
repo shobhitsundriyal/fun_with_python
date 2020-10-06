@@ -1,4 +1,4 @@
-#refecrence - https://www.youtube.com/watch?v=LaarVR1AOvs
+#Refecrence - https://www.youtube.com/watch?v=LaarVR1AOvs
 import pygame
 import math
 
@@ -38,12 +38,7 @@ def y_pt2(t):
 
 def redraw():
     global t
-    #if mod%20 == 0:
     background.fill(black)
-    '''
-    pygame.draw.circle(background, white, (x1, y1), 1) 
-    pygame.draw.circle(background, white, (x2, y2), 1) 
-    '''
     for i in range(20):#number of trails
         x1,y1 = translate(x_pt1(t+i), y_pt1(t+i))
         x2,y2 = translate(x_pt2(t+i), y_pt2(t+i))
