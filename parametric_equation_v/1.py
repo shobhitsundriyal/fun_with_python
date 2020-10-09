@@ -2,7 +2,7 @@
 import pygame
 import math
 
-win_width, win_height = 720, 720
+win_width, win_height = 800, 800
 out = False
 
 #Colors
@@ -43,7 +43,7 @@ def redraw():
         x1,y1 = translate(x_pt1(t+i), y_pt1(t+i))
         x2,y2 = translate(x_pt2(t+i), y_pt2(t+i))
         pygame.draw.line(background, white , (x1,y1),(x2, y2), 2)
-    t += 1.5
+    t += 0.15
     
     pygame.display.update()
 
