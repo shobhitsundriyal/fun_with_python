@@ -17,6 +17,9 @@ pygame.init()
 background = pygame.display.set_mode((win_width, win_height))
 clock = pygame.time.Clock()
 
+def project3_2d():
+    pass
+
 def redraw(): # Clean up the screen and start a new grid and new frame of pendulum with new coordinates
     background.fill(black)
     pendulum.draw(background)
