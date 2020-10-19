@@ -1,11 +1,15 @@
 import pygame
 import math
+import numpy as np
 
-win_width, win_height = 1280, 720
-
+win_width, win_height = 800, 800
 out = False
-acceleration = False
-length, angle, vel, Aacc = 0,0,0,0
+
+cube_points = np.empty((4,3))
+cube_points[0] = [-50, -50, 0]
+cube_points[1] = [50, -50, 0]
+cube_points[2] = [50, 50, 0]
+cube_points[3] = [-50, 50, 0]
 
 #Colors
 white = (255,255,255)
@@ -17,12 +21,24 @@ pygame.init()
 background = pygame.display.set_mode((win_width, win_height))
 clock = pygame.time.Clock()
 
-def project3_2d():
-    pass
+
+ortho_mat = np.array([
+        [1, 0, 0]
+        [0, 1, 0]
+    ])
+
+def translate(x):
+    x = x + win_width/2
+    return int(x)
 
 def redraw(): # Clean up the screen and start a new grid and new frame of pendulum with new coordinates
     background.fill(black)
-    pendulum.draw(background)
+    cube_points = np.matmul()
+    for points in cube_points:
+        x = translate(points[0])
+        y = translate(points[1])
+        pygame.draw.circle(background, white, (x,y), 5)
+
     pygame.display.update()
 
 
