@@ -2,20 +2,24 @@ import pygame
 from math import sin, cos, radians
 import numpy as np
 from numpy import transpose as T
+from random import choice
 
 win_width, win_height = 800, 800
 out = False
 
 cube_points = np.empty((8,3))
-cube_points[0] = [-50, -50, -50]
-cube_points[1] = [50, -50, -50]
-cube_points[2] = [50, 50, -50]
-cube_points[3] = [-50, 50, -50]
-cube_points[4] = [-50, -50, 50]
-cube_points[5] = [50, -50, 50]
-cube_points[6] = [50, 50, 50]
-cube_points[7] = [-50, 50, 50]
+cube_points[0] = [-1, -1, -1]
+cube_points[1] = [1, -1, -1]
+cube_points[2] = [1, 1, -1]
+cube_points[3] = [-1, 1, -1]
+cube_points[4] = [-1, -1, 1]
+cube_points[5] = [1, -1, 1]
+cube_points[6] = [1, 1, 1]
+cube_points[7] = [-1, 1, 1]
 
+scale = 70
+
+cube_points *= scale
 
 angle = radians(1.3)
 angle_plus = radians(5)
@@ -66,22 +70,25 @@ def redraw(): # Clean up the screen and start a new grid and new frame of pendul
     background.fill(black)
     global cube_points
 
-    cube_points = T(np.matmul(rotateZ, T(cube_points)))
-    #cube_points = T(np.matmul(rotateY, T(cube_points)))
+    #cube_points = T(np.matmul(rotateZ, T(cube_points)))
+    cube_points = T(np.matmul(rotateY, T(cube_points)))
     #cube_points = T(np.matmul(rotateZ, T(cube_points)))
     #cube_points = T(np.matmul(rotateX, T(cube_points)))
 
     # projection at last
-    distance = 1
-    z = 1 / (distance )#- np.min(cube_points))
+    distance = 5*scale
+    z = distance + cube_points[:, 2]# - np.mean(cube_points[:, 2]))
+    z = distance/z
     perspective_pro = np.array([
-        [z, 0, 0],
-        [0, z, 0]
+        [1, 0, 0],
+        [0, 1, 0]
     ])
     projected_points = T(np.matmul(perspective_pro, T(cube_points)))
-    projected_points += win_height/2
-    for points in projected_points:
-        x = int(points[0])
+    projected_points[:, 0] *= z
+    projected_points[:, 1] *= z
+    projected_points += win_width/2
+    for i, points in enumerate(projected_points):
+        x = int(points[0])  
         y = int(points[1])
         pygame.draw.circle(background, white, (x,y), 5)
 
