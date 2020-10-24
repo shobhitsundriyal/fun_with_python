@@ -70,7 +70,7 @@ def redraw(): # Clean up the screen and start a new grid and new frame of pendul
     background.fill(black)
     global cube_points
 
-    #cube_points = T(np.matmul(rotateZ, T(cube_points)))
+    cube_points = T(np.matmul(rotateZ, T(cube_points)))
     cube_points = T(np.matmul(rotateY, T(cube_points)))
     #cube_points = T(np.matmul(rotateZ, T(cube_points)))
     #cube_points = T(np.matmul(rotateX, T(cube_points)))
