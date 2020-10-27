@@ -77,9 +77,13 @@ def redraw(): # Clean up the screen and start a new grid and new frame of pendul
 
     # projection at last
     #perspective
+    
     distance = 5*scale
+    
     z = distance + cube_points[:, 2]# - np.mean(cube_points[:, 2]))
     z = distance/z
+    
+    #z = 1/1
 
     projected_points = T(np.matmul(ortho_mat, T(cube_points)))
     projected_points[:, 0] *= z
